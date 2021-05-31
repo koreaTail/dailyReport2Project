@@ -1,7 +1,7 @@
 /* Todo 파트 */
 @import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&family=Noto+Serif+KR:wght@300;400;700;900&display=swap");
 * { margin: 0; box-sizing: border-box; font-family: "Kiwi Maru", "Noto Serif KR", serif;}
-body { background-color: black; color: white; width: 100vw; height: 100vh;}
+body { background-color: black; color: white; width: 100vw; height: 100vh; font-size: 13px;}
 input { font-family: "Kiwi Maru", "Noto Serif KR", serif;}
 .background-center {display: flex; width: 100%; height: 100%; background-size: cover; background-position: 50% 50%; overflow: hidden;}
 
@@ -13,8 +13,9 @@ input { font-family: "Kiwi Maru", "Noto Serif KR", serif;}
 /* clock and todo part */
 .clock-and-todo-part { display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; width: auto;}
 .clock-part { width: 100%; padding-left: 65px; font-size: 50px;}
-.todo-part { width: 100%; padding-left: 50px;}
-.todo-part .black-box{ padding: 15px; height: 440px; width: 330px; background-color: rgba(0, 0, 0, 0.5); border-radius: 8px;}
+.right-time { display: none; width: 0; height: 0;}
+.todo-part { width: 100%; padding-left: 25px;}
+.todo-part .black-box{ padding: 15px; height: 460px; width: 330px; background-color: rgba(0, 0, 0, 0.5); border-radius: 8px;}
 .todo-part h4 { font-size: 25px; margin-bottom: 20px;}
 .todo-part .title { text-align: left; color: #badc58;}
 .todo-part form { text-align: center;}
@@ -32,7 +33,7 @@ input { font-family: "Kiwi Maru", "Noto Serif KR", serif;}
 .todo-part ul .li-complite .content { text-decoration: line-through; color: rgba(255, 255, 255, 0.4); text-decoration-color: rgba(186, 220, 88, 0.5);}
 /* daily-part */
 .daily-part { display: flex; align-items: center; justify-content: center; width: 50%;}
-.daily-part .black-box { position: relative; padding: 15px; height: 650px; width: 500px; background-color: rgba(0, 0, 0, 0.5); border-radius: 8px;}
+.daily-part .black-box { position: relative; padding: 15px; height: 550px; width: 560px; background-color: rgba(0, 0, 0, 0.5); border-radius: 8px;}
 .daily-part .black-box .start button { position:absolute; left: 50%; top:50%; transform: translate(-50%, -50%); width: 140px; height: 50px; background-color: rgba(0, 0, 0, 0.3); border: 2.5px solid #badc58; border-radius: 15px; color: #badc58; font-size: 20px;}
 .daily-part .black-box .timeLine {height: 700px; overflow: auto;}
 .daily-part .black-box .timeLine::-webkit-scrollbar {display: none;}
@@ -40,8 +41,8 @@ input { font-family: "Kiwi Maru", "Noto Serif KR", serif;}
 .daily-part form input { -webkit-appearance: none; -moz-appearance: none;  position: relative; margin-bottom: 20px; border-radius: 0; outline-style: none; line-height: normal; font-size: 16px; padding: 8.5px 0px; width: 100%; border: none; color: white; text-align: center; background-color: rgba(255, 255, 255, 0.1); border-radius: 15px; vertical-align: middle;}
 .daily-part form input::placeholder { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: rgba(255, 255, 255, 0.4); font-size: 15px;}
 /* empty-part */
-.empty { display: flex; align-items: center; justify-content: center; width: 25%;}
-.empty .black-box{ padding: 15px; height: 650px; width: 330px; background-color: rgba(0, 0, 0, 0.5); border-radius: 8px;}
+.empty { display: flex; align-items: center; justify-content: center; width: 20%; font-size: 12px;}
+.empty .black-box{ padding: 15px; height: 550px; width: 330px; background-color: rgba(0, 0, 0, 0.5); border-radius: 8px;}
 .empty .black-box p {margin-bottom: 5px; color: rgb(163, 163, 163);}
 /* ETC */
 .온도 { position: absolute; bottom: 0.5%; right: 0.5%; background-color: rgba(0, 0, 0, 0.55); padding: 10px; border-radius: 8px; text-align: right; font-size: 15px;}
