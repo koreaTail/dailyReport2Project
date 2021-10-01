@@ -117,9 +117,20 @@ function submitHandler(e) {
         alert("Start 버튼을 먼저 눌러주시면 감사하겠습니다~ ㅎㅎ;;;");
     } else {
         paintDailyReport(currentValue);
+        timeLine.scroll({
+            behavior: 'smooth',
+            left: 0,
+            top: timeLine.offsetHeight*100
+        });
 
     }
 }
+
+
+
+
+
+
 
 
 function init() {
