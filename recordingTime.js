@@ -2,18 +2,17 @@ const startDiv = document.querySelector(".start")
 const timeLine = document.querySelector(".timeLine")
 const clockText = clockTime.innerText;
 const dailyRecord = [];
-const dailyRecord_LS = 'dailyRecord'
+const dailyRecord_LS = 'dailyRecord';
 
 startDiv.querySelector(".dayStart").addEventListener("click", startHandler)
 
 
 function startHandler() {
   startDiv.querySelector(".dayStart").style.display = "none";
-
-  const span = document.createElement("span")
-  span.className = "startSpan"
-  timeLine.appendChild(span)
-  span.innerText = `${clockTime.innerText}`
+  const span = document.createElement("span");
+  span.className = "startSpan";
+  timeLine.appendChild(span);
+  span.innerText = `${clockTime.innerText}`;
 }
 
 const submit = document.querySelector(".js-daily-form")
@@ -34,7 +33,7 @@ function loadDailyReports() {
       const newId = dailyRecord.length + 1;
       const dailyRecordObject = {
         text: makeDiv.innerHTML,
-        id: newId
+        id: newId,
       }
       dailyRecord.push(dailyRecordObject);
       saveDailyReport();
@@ -59,6 +58,7 @@ function paintDailyReport(content) {
     <span class="현재시간">10:00</span>
     <span class="컨텐츠">한 일 쓰고</span>
     <span class="경과시간"></span>
+    <button>x</button>
     <br>`
   timeLine.appendChild(makeDiv)
 
@@ -80,7 +80,7 @@ function paintDailyReport(content) {
     startSpan.remove();
 
     const dailyRecordObject = {
-      text: `<span class="이전시간">${이전시간[이전시간.length - 1].innerText}</span> <span>-</span> <span class="현재시간">${현재시간[현재시간.length - 1].innerText}</span> <span class="컨텐츠">${컨텐츠[컨텐츠.length - 1].innerText}</span> <span class="경과시간">${경과시간[이전시간.length - 1].innerText}</span><br>`,
+      text: `<span class="이전시간">${이전시간[이전시간.length - 1].innerText}</span> <span>-</span> <span class="현재시간">${현재시간[현재시간.length - 1].innerText}</span> <span class="컨텐츠">${컨텐츠[컨텐츠.length - 1].innerText}</span> <span class="경과시간">${경과시간[이전시간.length - 1].innerText}</span><button>x</button><br>`,
       id: newId
     };
 
@@ -97,7 +97,7 @@ function paintDailyReport(content) {
     didInput.value = "";
 
     const dailyRecordObject = {
-      text: `<span class="이전시간">${이전시간[이전시간.length - 1].innerText}</span> <span>-</span> <span class="현재시간">${현재시간[현재시간.length - 1].innerText}</span> <span class="컨텐츠">${컨텐츠[컨텐츠.length - 1].innerText}</span> <span class="경과시간">${경과시간[이전시간.length - 1].innerText}</span><br>`,
+      text: `<span class="이전시간">${이전시간[이전시간.length - 1].innerText}</span> <span>-</span> <span class="현재시간">${현재시간[현재시간.length - 1].innerText}</span> <span class="컨텐츠">${컨텐츠[컨텐츠.length - 1].innerText}</span> <span class="경과시간">${경과시간[이전시간.length - 1].innerText}</span><button>x</button><br>`,
       id: newId
     };
 
@@ -107,6 +107,11 @@ function paintDailyReport(content) {
 
 }
 
+timeLine.addEventListener("click", deleteFunction)
+
+function deleteFunction(e){
+  e.target.parentNode.remove()
+}
 
 
 function submitHandler(e) {
