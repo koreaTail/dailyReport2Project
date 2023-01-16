@@ -11,7 +11,7 @@ function startHandler() {
   startDiv.querySelector(".dayStart").style.display = "none";
   const span = document.createElement("span");
   span.className = "startSpan";
-  timeLine.appendChild(span);
+  timeLine.appendChild(span)
   span.innerText = `${clockTime.innerText}`;
 }
 
@@ -110,7 +110,12 @@ function paintDailyReport(content) {
 timeLine.addEventListener("click", deleteFunction)
 
 function deleteFunction(e){
-  e.target.parentNode.remove()
+  if(e.target = 'button'){
+    console.log(e)
+    e.target.parentNode.remove()
+  }else{
+    console.log(e)
+  }
 }
 
 
